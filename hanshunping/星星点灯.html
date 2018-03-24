@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" id="global">
+<head>
+    <meta charset="UTF-8">
+    <title>星星点灯</title>
+    <script>
+        var global=document.getElementById("global");
+        global.onclick=xingxing;
+        function xingxing(event)
+        {
+            var x_img=document.createElement("img");
+            //            var body=document.getElementsByTagName("body")[0];
+            document.body.appendChild(x_img);
+            x_img.src="img/094625hhbzmbbbhbmobiq8.gif";
+            x_img.style.width=random(30,100)+"px";
+            x_img.style.height=random(30,100)+"px";
+            x_img.style.position="absolute";
+            x_img.style.top=event.clientY-(x_img.height/2)+"px";
+
+
+            x_img.style.left=event.clientX-(x_img.width/2)+"px";
+
+        }
+        function random(min,max) {
+            return Math.floor(Math.random()*(max-min)+min)
+        }
+    </script>
+</head>
+<body bgcolor="black">
+
+</body>
+</html>

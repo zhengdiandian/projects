@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>股票定时抛售</title>
+    <script>
+        var timer = 0;
+        function abc1(vul)
+        {
+            if (vul == "start")
+            {
+                timer = setTimeout("chuli()",5000)
+            }
+            else
+            {
+                clearTimeout(timer);
+                alert("取消操作");
+            }
+        }
+        function chuli() {
+            alert("抛售成功")
+        }
+        /*function abc2() {
+            clearTimeout(timer);
+            alert("取消操作");
+        }*/
+    </script>
+</head>
+<body>
+<h1>定时抛售股票</h1>
+<input type="button" value="5秒后自动抛售" onclick="abc1('start')">
+<input type="button" value="停止抛售" onclick="abc1('stop')">
+</body>
+</html>

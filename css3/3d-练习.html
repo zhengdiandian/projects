@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3d-练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background:url("jacky/bg.jpg") no-repeat;
+            background-size:cover;
+            overflow: hidden;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            /*background-color: red;*/
+            position: absolute;
+            left: 50%;
+            bottom: 100px;
+            margin-left: -100px;
+            transform-style:preserve-3d;
+            /*transform: rotateX(10deg);*/
+            animation: xuanzhuan 6s linear 0s infinite ;
+        }
+        @keyframes xuanzhuan {
+            from{
+                transform:rotateX(-10deg) rotateY(0deg);
+            }
+            to{
+                transform:rotateX(-10deg) rotateY(360deg);
+            }
+        }
+        ul:hover{
+            animation-play-state:paused;
+        }
+        ul:hover li img{
+           opacity: 0.5;
+        }
+        ul li:hover img{
+            opacity: 1;
+
+        }
+
+        ul li{
+            width: 200px;
+            height: 200px;
+            list-style: none;
+            font-size: 60px;
+            line-height: 200px;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color:black;
+
+        }
+
+        ul li:nth-child(1){
+            transform: rotateY(60deg) translateZ(200px);
+        }
+        ul li:nth-child(2){
+            transform: rotateY(120deg) translateZ(200px);
+
+        }
+        ul li:nth-child(3){
+            transform: rotateY(180deg) translateZ(200px);
+
+         }
+        ul li:nth-child(4){
+            transform: rotateY(240deg) translateZ(200px);
+
+          }
+        ul li:nth-child(5){
+            transform: rotateY(300deg) translateZ(200px);
+
+           }
+        ul li:nth-child(6){
+            transform: rotateY(360deg) translateZ(200px);
+
+            }
+        ul li img{
+            width: 200px;
+            height: 200px;
+            border: 5px solid skyblue;
+            box-sizing: border-box;
+        }
+        .heart{
+            width: 173px;
+            height: 157px;
+            position: absolute;
+            left: 100px;
+            bottom: 100px;
+            animation:move 10s linear 0s infinite normal;
+        }
+        @keyframes move {
+            0%{
+                left: 100px;
+                bottom: 100px;
+                opacity: 0;
+            }
+            25%{
+                left: 300px;
+                bottom: 300px;
+                opacity: 1;
+            }
+            40%{
+                left: 500px;
+                bottom: 500px;
+                opacity: 0;
+            }
+            60%{
+                left: 800px;
+                bottom: 300px;
+                opacity:1;
+            }
+            80%{
+                left: 1200px;
+                bottom: 100px;
+            }
+            100%{
+                left: 800px;
+                bottom: -200px;
+            }
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><img src="jacky/1.png" alt=""></li>
+    <li><img src="jacky/2.jpg" alt=""></li>
+    <li><img src="jacky/3.jpg" alt=""></li>
+    <li><img src="jacky/4.gif" alt=""></li>
+    <li><img src="jacky/5.jpg" alt=""></li>
+    <li><img src="jacky/6.jpg" alt=""></li>
+</ul>
+<img src="jacky/xin.png" alt="" class="heart">
+<audio src="jacky/江哥最爱的歌.mp3" autoplay="autoplay" loop="loop"></audio>
+
+</body>
+</html>

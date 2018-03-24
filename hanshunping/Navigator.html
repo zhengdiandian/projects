@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigator</title>
+    <script>
+        alert(navigator.userAgent);
+        var browser=navigator.userAgent;
+        if (browser.indexOf("Firefox")>=0)
+        {
+            alert("你使用的是gecko_browser")
+        }
+        else if (browser.indexOf("Chrome")>=0)
+        {
+            alert("你使用的是Chrome_browser")
+        }
+        else if(browser.indexOf("MSIE")<=0)
+        {
+            alert("你使用的是IE_browser")
+        }
+    </script>
+</head>
+<body>
+
+<h1>判断浏览器类型</h1>
+</body>
+</html>

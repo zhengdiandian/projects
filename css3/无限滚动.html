@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无限滚动</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            height: 188px;
+            width: 600px;
+            /*border: 1px solid;*/
+            margin: 100px auto;
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+        ul{
+            width: 2000px;
+            height: 300px;
+            animation: gundong 10s linear 0s infinite normal;
+
+        }
+        @keyframes gundong {
+            from{
+                margin-left: 0;
+            }
+            to{
+                margin-left: -1200px;
+            }
+        }
+        li{
+            list-style: none;
+            float: left;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            width: 300px;
+            height: 188px;
+
+        }
+        ul li img{
+
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li><img src="images/banner1.png" alt=""></li>
+        <li><img src="images/banner2.jpg" alt=""></li>
+        <li><img src="images/banner3.jpg" alt=""></li>
+        <li><img src="images/banner4.jpg" alt=""></li>
+        <li><img src="images/banner1.png" alt=""></li>
+        <li><img src="images/banner2.jpg" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>

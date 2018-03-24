@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>    
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <fu></fu>
+
+    </div>
+    <script>
+        Vue.component('fu', {
+            template: `<div>
+                <zi @show_fu='shou_yuer'></zi>
+                <div v-if='show'>你的余额1456$</div>
+            </div>`,
+            data(){
+                return{
+                    show: false
+                }
+            },
+            methods: {
+                
+                shou_yuer:function(data){
+                    this.show = true
+                    console.log(data);
+                }
+                
+            }
+        })
+        Vue.component('zi',{
+            template: `
+            <button @click='click_zi'>显示余额</button>
+            `,
+            methods: {
+                click_zi(){
+                    this.$emit('show_fu',{a:1,b:2})
+                }
+            }
+        })
+        new Vue({
+            el: '#app'
+        })
+    </script>
+</body>
+</html>

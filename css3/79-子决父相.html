@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子决父相</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul{
+            width: 800px;
+            list-style: none;
+            height: 50px;
+            background-color: #cccccc;
+            margin: 100px auto;
+        }
+        ul li{
+            /*text-decoration: none;*/
+            /*list-style: none;*/
+            /*display: inline;*/
+            width: 100px;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+        }
+        ul li:nth-of-type(4){
+            background-color: red;
+            position: relative;
+        }
+        ul li img{
+            /*position: relative;*/
+            /*top: -22px;*/
+            /*left: -17px;*/
+            position: absolute;
+            /*top: -4px;*/
+            left:50%;
+            margin-left: -13px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>秒杀</li>
+    <li>优惠券</li>
+    <li>闪购</li>
+    <li>拍卖 <img src="hot.gif" alt=""></li>
+    <li>服装城</li>
+    <li>京东超市</li>
+    <li>全球购</li>
+    <li>京东金融</li>
+</ul>
+</body>
+</html>

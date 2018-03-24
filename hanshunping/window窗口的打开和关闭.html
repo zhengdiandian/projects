@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window窗口的打开和关闭</title>
+    <script>
+        //_self在本窗口打开
+        function openwindow() {
+            var mynewwindow = open("http://www.w3school.com.cn/jsref/met_win_open.asp","_blank","width=200px,height=200px,toolbar=1,menubar=1,titlebar=1,left=500px,top=500px")
+            mynewwindow.document.write("hello")
+            //5庙后关闭窗口
+            mynewwindow.setTimeout(close,5000)
+        }
+        function closewindow()
+        {
+            if (window.confirm("真的要关闭此窗口吗?"))
+            {
+                window.close();
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="打开窗口" onclick="openwindow()">
+<input type="button" value="关闭窗口" onclick="closewindow()">
+
+</body>
+</html>

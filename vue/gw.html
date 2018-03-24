@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./bootstrap.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-bordered">
+            <caption class="h3 text-danger">购物车</caption>
+            <tr class=" text-center">
+              <td>商品名称</td>
+              <td>商品价格</td>
+              <td>操作</td>
+            </tr>
+            <tr class=" text-center" v-for="iphone in iphones">
+              <td>{{iphone.name}}</td>
+              <td>{{iphone.price}}</td>
+              <td><button class="btn-warning btn-xs" @click="removeOne(iphone)">删除</button></td>  
+            </tr>
+            <tr v-show="iphones.length">
+              <td colspan="3"><button class="btn-danger pull-right" @click="removeAll">全部删除</button> </td>
+            </tr>
+        </table>
+        <form role="form">
+          <div class="form-group">
+            <label for="productName" class="control-label">商品名称</label>
+            <input v-model="name" type="text" class="form-control" id="productPrice" placeholder="请输入商品名称">
+          </div>
+          <div class="form-group">
+            <label for="productName">商品价格</label>
+            <input v-model="price" type="text" class="form-control" id="productPrice" placeholder="请输入商品价格">
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn-info" @click="add">添加</button>
+            <button type="reset" class="btn-warning">重置</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="./vue2.0.js"></script>
+<script>
+  var vm = new Vue({
+    el: "#app",
+    data:{
+      name: "",
+      price: "",
+      iphones:[
+        {
+          name: 'iphone5',
+          price: 2800
+        },
+        {
+          name: 'iphone6',
+          price: 4800
+        },
+        {
+          name: 'iphone7',
+          price: 6800
+        }
+      ]
+    },
+    methods: {
+      removeOne(product){
+        this.iphones = this.iphones.filter(item=>{
+          return item != product
+        });
+      },
+      removeAll(){
+        this.iphones = [];
+      },
+      add(){
+        this.iphones.push({name:this.name,price:this.name});
+        this.name = this.price = "";
+      }
+    }
+  })
+</script>
+</body>
+</html>

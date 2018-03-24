@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .div{
+            position: absolute;
+            left: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: #ff4400;
+        }
+        .span{
+            /* display: inline-block; */
+            position:absolute;
+            left:600px;
+            width: 1px;
+            height: 200px;
+            background-color: #887888;
+        }
+        .wrapper{
+            position: absolute;
+            left: -400px;
+            top: 500px;
+            width: 400px;
+            height: 100px;
+            background-color: yellow;
+        }
+        .wrapper .right{
+            position: absolute;
+            right: -50px;
+            width: 50px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="div"></div>
+    <span class="span"></span>
+    <div class="wrapper">
+        <div class="right"></div>
+    </div>
+    <script>
+        var oDiv = document.getElementsByTagName('div')[0]
+        // console.log(oDiv.currentStyle['width']);
+        // console.log(window.getComputedStyle(oDiv,false)['width']);
+        oDiv.onclick = function(){
+            startmove(this,600)
+        }
+        // 运动
+        function startMove(obj,json,callBack) { 
+            clearInterval(obj.timer)
+            var iSpeed,
+                iCur
+            obj.timer = setInterval(function () { 
+                var bStop =true
+                for (var attr in json) {
+                    if (json.hasOwnProperty(attr)) {
+                        var element = json[attr]
+                        if(element='opacity'){
+                            
+                        })
+                        
+                    }
+                }
+             },30)
+        }
+        // function startmove(obj,target) {
+        //     clearInterval(obj.timer)
+        //     var iSpeed
+        //     if(obj.offsetLeft > target){
+        //         iSpeed *= -1
+        //     }
+        //     obj.timer = setInterval(function() {
+        //         if(target === obj.offsetLeft) {
+        //             clearInterval(obj.timer)
+                    
+
+        //             obj.offsetLeft = target
+        //         }else {
+        //             iSpeed = (target - obj.offsetLeft)/7
+        //             iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) :Math.floor(iSpeed)
+        //             obj.style.left = obj.offsetLeft + iSpeed + 'px'
+        //         }
+        //     },30)
+        // }
+        // get样式
+        function getStyle(obj,style) {
+            console.log(obj);
+            if (obj.currentStyle) {
+                return obj.currentStyle[style]
+            }
+            if (window.getComputedStyle) {
+                return window.getComputedStyle(obj,null)[style]
+            }
+        }
+
+        var oWrapper=document.getElementsByClassName('wrapper')[0]
+        oWrapper.onmouseenter = function() {
+            startmove(this,0)
+        }
+        oWrapper.onmouseleave = function () { 
+            var _this =this
+            
+            startmove(_this,console.log(parseInt(getStyle(_this,'left'))))
+         }
+    </script>
+</body>
+</html>

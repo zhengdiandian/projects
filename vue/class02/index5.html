@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app1">
+        <h1>{{title}}</h1>
+        <button @click = 'show'>让你能看见我</button>
+        <p v-if="showP">你能看见我吗</p>
+    </div>
+    <div id="app2">
+        <h1>{{title}}</h1>
+        <button @click = 'changeVm1'>change vm1</button>
+    </div>
+    <script>
+    let vm1 = new Vue({
+        el: '#app1',
+        data: {
+            title: 'the VueJs instance',
+            showP: false,
+        },
+        methods:{
+            show(){
+                this.title = 'the VueJs instance(update)'
+                this.showP =true
+            }
+        },
+        computed: {
+            upperCase(){
+                return this.title.toUpperCase()
+            }
+        },
+        watch:{
+            title: function(){
+                alert(this.upperCase)
+            }
+        }
+    })
+    setTimeout(function() {
+        vm1.title = 'change By Time'
+        vm1.show()
+    }, 3000);
+    let vm2 = new Vue({
+        el: '#app2',
+        data: {
+            title: 'this is vm2'
+        },
+        methods:{
+            changeVm1(){
+                vm1.title = 'change By vm2'
+            }
+        }
+    })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/css/index.css">
+</head>
+<body>
+    <div class="wrapper">
+        <input type="text" id="inp">
+        <button type="" id="age">age</button>
+        <button id="male">male</button>
+        <button id="female">female</button>
+        <button id="all">all</button>
+        <ul id="ul"></ul>
+    </div>
+
+    <script src="./src/js/tool.js"></script>
+    <script src="./src/js/actions.js"></script>
+    <script src="./src/js/index.js"></script>
+
+    <!--<script>
+        // var oUl = document.getElementById('ul'),
+        //     oInp = document.getElementById('inp'),
+        //     oAge = document.getElementById('age'),
+        //     oMale = document.getElementById('male'),
+        //     oFemale = document.getElementById('female'),
+        //     oAll = document.getElementById('all');
+        
+        // var allPersonArr = [
+        //     {name: '邓旭明', age: 55, sex: 'male', email: 'dg@163.com'},
+        //     {name: '邓嫂子', age: 20, sex: 'female', email: 'ds@163.com'},
+        //     {name: '邓小宝', age: 5, sex: 'male', email: 'dxb@163.com'},
+        //     {name: '刘朝旭', age: 18, sex: 'male', email: 'lzx@qq.com'},
+        //     {name: '刘朝君', age: 22, sex: 'female', email: 'lzj@qq.com'},
+        //     {name: '刘德华', age: 22, sex: 'male', email: 'lzj@qq.com'},
+        //     {name: '宋小宝', age: 40, sex: 'male', email: 'sxb@163.com'},
+        //     {name: '小宝宝', age: 1, sex: 'female', email: 'sxb@163.com'}
+        // ];
+
+        // var filterArr = allPersonArr;
+        // var lastSex = 'all';
+
+        //渲染筛选出来的数组
+        // function randerPageByArr(personArr) {
+        //     var htmlArrStr = '';
+        //     personArr.forEach(function (ele, index) {
+        //         htmlArrStr += '<li>'+ 'name: ' + ele.name + ', age: ' + ele.age + ', sex: '+ ele.sex +'</li>'
+        //     })
+        //     oUl.innerHTML = htmlArrStr;
+        // }
+        // //根据name筛选数组
+        // function filterPersonArr(allPersonArr, val) {
+        //     return  allPersonArr.filter(function (ele, index) {
+        //         return ele.name.indexOf(val) != -1;
+        //     })
+        // }
+        // //把筛选出来的数组年龄加1
+        // function addAge(filterArr) {
+        //     return filterArr.map(function (ele, index) {
+        //         ele.age++;
+        //         return ele;
+        //     })
+        // }
+        // // 筛选性别
+        // function filterSex(filterArr, sex) {
+        //     return filterArr.filter(function (ele, index) {
+        //         return sex === 'all' ? true : ele.sex === sex;
+        //     })
+        // }
+
+
+
+
+        // function bindEventByActions(actions) {
+        //     actions.forEach(function (ele, index) {
+        //         switch(ele.type) {
+        //             case 'filterName':
+        //                 ele.doc.oninput = function () {
+        //                     randerPageByArr(
+        //                         filterArr = filterPersonArr(allPersonArr,this.value)
+        //                     )
+        //                     lastSex = 'all';
+        //                 }
+        //                 break;
+        //             case 'addAge':
+        //                 ele.doc.onclick = function () {
+        //                     randerPageByArr(addAge(
+        //                         filterSex(filterArr, lastSex)
+        //                     ));
+        //                 }
+        //                 break;
+        //             case 'filterSex': 
+        //                 ele.doc.onclick = function () {
+        //                     randerPageByArr(
+        //                         filterSex(filterArr, lastSex = ele.prame)
+        //                     ) 
+        //                 }
+        //         }
+        //     })
+        // }
+        // bindEventByActions(actions);
+
+
+
+
+
+
+        
+
+
+
+        // oInp.oninput = function () {
+            
+        // }
+        // oAge.onclick = function () {
+        //     randerPageByArr(addAge(
+        //         filterSex(filterArr, lastSex)
+        //     ));
+        // }
+        // oMale.onclick = function () {
+        //     randerPageByArr(
+        //         filterSex(filterArr, lastSex = 'male')
+        //     )   
+        // }
+        // oFemale.onclick = function () {
+        //     randerPageByArr(
+        //         filterSex(filterArr, lastSex = 'female')
+        //     )   
+        // }
+        // oAll.onclick = function () {
+        //     randerPageByArr(
+        //         filterSex(filterArr, lastSex = 'all')
+        //     )   
+        // }
+
+        
+        
+        
+
+
+
+
+
+        
+
+
+
+    </script>-->
+
+
+</body>
+</html>

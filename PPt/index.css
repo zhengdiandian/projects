@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html,body,
+.wrapper,
+.slider-list,
+.slider{
+    width: 100%;
+    height: 100%;
+}
+/* .slider-list{
+    overflow: hidden;
+} */
+.slider{
+    box-sizing: border-box;
+    padding: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.slider-list > .slider:nth-of-type(1){
+    background-image: url('./images/bg-1.jpg')
+}
+.slider-list > .slider:nth-of-type(2){
+    background-image: url('./images/bg-2.jpg');
+    display: none;
+}
+.slider-list > .slider:nth-of-type(3){
+    background-image: url('./images/bg-3.jpg');
+    display: none;
+}
+.slider-list > .slider:nth-of-type(2) >.slider-img,
+.slider-list > .slider:nth-of-type(3)> .slider-img{
+    width: 0%;
+}
+.slider-list .slider-content{
+    float: left;
+    width: 40%;
+    color: #ff4400;
+}
+.slider-list .slider-content p{
+    margin-top: 20px;
+    width: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp:6;
+    -webkit-box-orient: vertical
+}
+.slider-list .slider .slider-img{
+    float: right;
+    width: 40%;
+}
+.slider-list  .slider-img img{
+    width: 100%;
+}
+.slider-btn{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+}
+.slider-btn span{
+    position: absolute;
+    width: 28px;
+    height: 40px;
+    display: block
+}
+.slider-btn .prev-btn{
+    left: 50px;
+    background-image: url('./images/left-arrow.png')
+}
+.slider-btn .next-btn{
+    right: 50px;
+    background-image: url('./images/right-arrow.png');
+}
+.slider-point{
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
+    height: 40px;
+}
+.slider-point ul{
+    text-align: center;
+}
+.slider-point ul li {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #aaaaaa;
+    display: inline-block;
+    margin-right: 20px;
+}
+.slider-point ul li.active{
+    background-color: #ffffff;
+}
+/* .slider-content{
+    font-size: 50px;
+} */

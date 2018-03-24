@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function openwindow() {
+            var open=confirm("打开新窗口?")
+            if (open=true){
+                var url=prompt("打开新窗口","http://www.sougou.com")
+                if(url!=null){
+                    window.open(url,"_blank",'width=400px, height=500px,menubar=no,toolbar=no')
+                }
+                else{alert("zaijian");}
+            }
+            else {alert("zaijian");}
+
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="打开新窗口" onclick="openwindow()">
+
+</body>
+</html>

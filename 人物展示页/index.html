@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            position: relative;
+            width: 100px;
+        }
+        .item{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            color: blue;
+            z-index: 99;
+        }
+        .content{
+            position: absolute;
+            right: 100px;
+            top: 0;
+            opacity: 0;
+            -webkit-transition: all 0.3s  ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            transition: all 0.3s  ease-in-out;
+        }
+        .content img{
+            width: 200px;
+            height: 300px;
+        }
+        .item span:hover +.content{
+            right: -250px;
+            opacity: 1;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="item">
+            <span>one</span>
+            <div class="content">
+                <img src="./images/1.png" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <span>tow</span>    
+            <div class="content">
+                <img src="./images/2.png" alt=""></div>        
+        </div>
+        <div class="item">
+            <span>three</span>
+            <div class="content">
+                <img src="./images/3.png" alt="">
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

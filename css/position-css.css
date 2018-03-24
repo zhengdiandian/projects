@@ -1,0 +1,17 @@
+.position{
+    width: 100px;
+    height: 100px;
+    background-color: darkseagreen;
+    left: 60px;
+    position: relative;
+    z-index: 2;
+}
+.position2{
+    width: 100px;
+    height: 100px;
+    background-color: #003c52;
+    position: relative;
+    left:55px;
+    top: -30px;
+    z-index: 1;
+}

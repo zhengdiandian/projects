@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+        <div :class="{box :boxStyle}" @mousedown='drag'>
+
+        </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                top: 0,
+                left: 0,
+                boxStyle: true
+            },
+            methods: {
+                drag: function drag(event) {
+                    // alert('ok')
+                    var self = event.srcElement,
+                        disX = event.clientX - self.offsetLeft,
+                        disY = event.clientY - self.offsetTop
+                        // console.log(this);
+                    
+                    document.onmousemove = function (event) {
+                        var newDisX = event.clientX - disX,
+                            newDisY = event.clientY - disY
+                        self.style.left = newDisX + 'px'
+                        self.style.top = newDisY + 'px'
+                        // console.log(this);
+                    }
+                    document.onmouseup = function () {
+                        vm._data.top = document.cookie ="top = "+self.offsetTop
+                        vm._data.left= document.cookie ="left = "+self.offsetLeft
+                        document.onmousemove = null
+                        document.onmouseup = null
+                    }
+                }
+                
+            }
+        })
+       
+
+        // var oBox =document.getElementById('box')
+        // oBox.onmousedown =drag
+
+    </script>
+</body>
+
+</html>

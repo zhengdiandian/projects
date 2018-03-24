@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画布</title>
+    <style>
+        #my_canvas{
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<canvas width="400px" height="300px" id="my_canvas"></canvas>
+<script>
+    var huabu=document.getElementById("my_canvas");
+    var huabi=huabu.getContext("2d");
+    //rect
+//    huabi.fillStyle="red";
+//    huabi.fillRect(0,0,200,200);
+//    huabi.rect(100,100,100,100);
+//    huabi.stroke()
+    //直线
+    /*huabi.strokeStyle="black";
+    huabi.beginPath();
+    huabi.moveTo(100,200);
+    huabi.lineTo(300,200);
+    huabi.closePath()
+    huabi.stroke()*/
+    //空心三角形
+    huabi.beginPath();
+    huabi.moveTo(50,10);
+    huabi.lineTo(50,100);
+    huabi.lineTo(100,100);
+    huabi.closePath();
+    huabi.stroke();
+    //实心三角形
+    huabi.beginPath();
+    huabi.moveTo(100,10);
+    huabi.lineTo(100,100);
+    huabi.lineTo(150,100);
+    huabi.closePath();
+    huabi.fillStyle="red"
+    huabi.fill();
+    //空心矩形
+    huabi.strokeRect(160,10,100,50);
+    //填充的矩形
+    huabi.fillRect(270,10,50,60);
+    //空心圆
+    huabi.beginPath();
+    huabi.arc(350,100,30,0,2*Math.PI);
+    huabi.stroke();
+</script>
+</body>
+</html>

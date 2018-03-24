@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>school-15</title>
+</head>
+<body>
+<script>
+    for (var i=0;i<10;i++){
+        if (i==3){continue}
+        document.write("sum"+i)
+
+    }
+    document.write('</br>')
+    var x;
+    var che=['奔驰','宝马','奥迪'];
+    for(x in che){
+        document.write(che[x]+"</br>");
+    }
+    var txt='';
+    function message() {
+
+        try {
+            adddlert("welcome guest")
+        }
+        catch(err){
+            txt="本页存在错误\n\n";
+            txt+="错误描述"+ err.description ;
+            txt+="点击确定继续";
+            alert(txt);
+        }
+
+    }
+</script>
+<input type="button" onclick="message()" value="查看消息">
+</body>
+</html>

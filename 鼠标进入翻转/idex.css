@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrapper{
+    
+    max-width: 700px;
+    min-width: 300px;
+    margin: 200px auto;
+    border: 1px solid #ccc;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+ul li{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    perspective: 300px;
+}
+/* ul li .pocBox{
+    width: 100%;
+    height: 100%;
+} */
+ul li img{
+    width: 100%;
+}
+.picBox{
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: center center -100px;
+    /* transform: rotateY(10deg) */
+    /* animation: in-left 1s ease-in-out forwards; */
+}
+.picBox,
+.hide,
+.show{
+    width: 100%;
+    height: 100%;
+    /* opacity: 0.5; */
+}
+.show{
+    /* opacity: 0.5; */
+}
+.hide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    color: floralwhite;
+    text-align: center;
+    line-height: 200px;
+    font-size: 26px;
+    transform: translate3d(0, 0,-1px);
+    
+}
+/* 上 */
+@keyframes in-top{
+    from{
+        transform: rotate3d(0,0,0)
+    }
+    to{
+        transform: rotate3d(-1,0,0,90deg)
+    }
+}
+@keyframes out-top{
+    from{
+        transform: rotate3d(-1,0,0,90deg)
+    }
+    to{
+        transform: rotate3d(0,0,0)
+    }
+}
+/* 右 */
+@keyframes in-left{
+    from{
+        transform: rotate3d(0,0,0)
+    }
+    to{
+        transform: rotate3d(0,1,0,90deg)
+    }
+}
+@keyframes out-left{
+    from{
+        transform: rotate3d(0,1,0,90deg)
+    }
+    to{
+        transform: rotate3d(0,0,0)
+    }
+}
+/* 下  */
+@keyframes in-bottom{
+    from{
+        transform: rotate3d(0,0,0)
+    }
+    to{
+        transform: rotate3d(1,0,0,90deg)
+    }
+}
+
+
+
+@keyframes out-bottom{
+    from{
+        transform: rotate3d(1,0,0,90deg)
+    }
+    to{
+        transform: rotate3d(0,0,0)
+    }
+}
+/* 右 */
+@keyframes in-right{
+    from{
+        transform: rotate3d(0,0,0)
+    }
+    to{
+        transform: rotate3d(0,-1,0,90deg)
+    }
+}
+@keyframes out-right{
+    from{
+        transform: rotate3d(0,-1,0,90deg)
+    }
+    to{
+        transform: rotate3d(0,0,0)
+    }
+}
+.items .in-top .picBox .hide,
+.items .out-top .picBox .hide{
+    transform-origin: bottom;
+    transform: translate3d(0,-100%,0) rotate3d(1,0,0,90deg)
+}
+.items .in-top .picBox {
+    animation: in-top 1s ease-in-out forwards;
+}
+.items .out-top .picBox {
+    animation: out-top 1s ease-in-out forwards;
+}
+.items .in-left .picBox .hide,
+.items .out-left .picBox .hide{
+    transform-origin: right;
+    transform: translate3d(-100%,0,0) rotate3d(0,-1,0,90deg)
+}
+.items .in-left .picBox {
+    animation: in-left 1s ease-in-out forwards;
+} 
+.items .out-left .picBox {
+    animation: out-left 1s ease-in-out forwards;
+}
+.items .in-bottom .picBox .hide,
+.items .out-bottom .picBox .hide{
+    transform-origin: top;
+    transform: translate3d(0,100%,0) rotate3d(-1,0,0,90deg)
+}
+.items .in-bottom .picBox{
+    animation: in-bottom 1s ease-in-out forwards;
+}
+.items .out-bottom .picBox{
+    animation: out-bottom 1s ease-in-out forwards;
+}
+.items .in-right .picBox .hide,
+.items .out-right .picBox .hide{
+    transform-origin: left;
+    transform: translate3d(100%,0,0) rotate3d(-0,1,0,90deg)
+}
+.items .in-right .picBox{
+    animation: in-right 1s ease-in-out forwards;
+}
+.items .out-right .picBox{
+    animation: out-right 1s ease-in-out forwards;
+}

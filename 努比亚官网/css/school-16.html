@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var x=prompt("输入0-10之间的数");
+    try {
+    if(x>10){
+        throw "err1"
+        }
+    else if (isNaN(x)) {
+            throw "err2"
+    }
+    else if (x<0){
+        throw "err2"
+    }
+    }
+    catch(er){
+        if(er=="err1"){
+            alert("错误该值太大")
+        }
+        if(er=="err2"){
+            alert("错误该值不是数字")
+        }
+        if(er=="err3"){
+            alert("错误该值太小")
+        }
+    }
+
+</script>
+</body>
+</html>

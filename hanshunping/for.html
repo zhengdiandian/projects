@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //        document.write("*");
+    var n=5;
+    for(var i=1;i<=n;i++)
+    {
+        for(var k=0;k<n-i;k++)
+        {
+            document.write("-")
+        }
+        for (var j=1;j<=i;j++)
+        {
+
+//             document.write("&nbsp;");
+            document.write("*"+"&nbsp;");
+        }
+        document.write("</br>");
+    }
+    var c=100;
+    for (var i=1;i<=c;i++)
+    {
+        for(var k=0;k<c-i;k++)
+        {
+            document.write("&nbsp;");
+        }
+        for(var j=1;j<=2*(i-1)+1;j++)
+        {
+            document.write("*");
+        }
+        document.write("</br>")
+    }
+</script>
+
+</body>
+</html>

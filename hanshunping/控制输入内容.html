@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制输入内容</title>
+
+</head>
+<body>
+请输入8位数：<input type="text" id="num" <!--onkeydown="checkNum(event)-->">
+<script>
+    var count=0;
+    function checkNum(event)
+    {
+        //查键值
+//        alert(event.keyCode);
+        if(event.keyCode==8&&count>=0)
+        {
+            count--
+            return true;
+        }
+
+        if (event.keyCode<48||event.keyCode>57)
+        {
+        alert("not number");
+//        return true;
+        }else if(count==8)
+        {
+//            alert("chaochu")
+            return false;
+        }else
+            {
+                count++
+            }
+
+    }
+    var num=document.getElementById("num");
+    num.onkeydown=checkNum;
+</script>
+</body>
+</html>

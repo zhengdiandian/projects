@@ -1,0 +1,20 @@
+ul{
+    list-style: none;
+    /*display: block;*/
+    /*background-color: #666666;*/
+    /*text-align: center;*/
+    /*width: 20%;*/
+}
+a:link,a:visited{
+    background-color: #009399;
+    /*display: block;*/
+    text-decoration: none;
+}
+a:active,a:hover{
+    background-color: #003c52;
+    text-decoration: none;
+    /*display: block;*/
+}
+li{
+    display: inline;
+}

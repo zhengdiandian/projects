@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(giri,index) in denggeGiles" @click='chengeGirls(index)'>{{giri}}({{index}})</li>
+        </ul>
+        <button @click = 'newGirl'>new girl</button>
+        <template v-for="(value,i) in denggeGiles">
+            <h1>{{value}}</h1>
+            <p>{{i}} </p>
+
+        </template>
+
+        <li v-for="person in persons">
+            <p v-for="(value,index,i) in person">{{value}} | {{index}} | {{i}}</p>
+        </li>
+        <div v-for="(item,index) in inputValue" :key="item">
+            {{item}}<input type="text" >
+        </div>
+        <button @click="reverseInput">reverse</button>
+    </div>
+    <script>
+        let data = [{
+            picUrl: 'www.baidu.com',
+            title: '拳头不是游戏公司'
+        }]
+        new Vue({
+            el: '#app',
+            data: {
+                denggeGiles: ['凤姐', '虹桥一姐', '芙蓉u姐姐'],
+                persons: [
+                    {
+                        name: 'dengge',
+                        color: 'green'                    
+                    },
+                    {
+                        name: 'chenge',
+                        color: 'red'
+                    }
+                ],
+                inputValue: [1,2,3]
+
+            },
+            methods: {
+                chengeGirls: function(index){
+                    var arr = [].concat(this.denggeGiles)
+                    arr[index] = '如花'
+                    this.denggeGiles = arr
+                },
+                newGirl: function(){
+                    this.denggeGiles.push('如花')
+                },
+                reverseInput(){
+                    this.inputValue.reverse()
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

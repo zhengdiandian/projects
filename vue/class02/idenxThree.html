@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p v-if="show=='a'">你能看到我吗<span>看见我了吗</span></p>
+        <p v-else-if="show=='b'">elseif</p>
+        <p v-else>有我没啊她</p>
+        <p v-show="show">你看不到我吗 呵呵</p>
+        <template v-if="show">
+            <p>请输入用户名</p>
+            <input type="text" name="" id="" placeholder="请输入用户名" key="username">
+        </template>
+        <template v-else>
+            <p>请输入密码</p>
+            <input type="text" placeholder="输入你的密码" key="mima" id="">
+        </template>
+        
+        <button @click='show=!show'>switch</button>
+        <button @click ="show='a'">A</button>
+        <button @click ="show='b'">B</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                show: true
+            }
+        })
+    </script>
+</body>
+</html>

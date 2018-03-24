@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compressed CSS -->
+    <link href="https://cdn.bootcss.com/foundation/6.4.4-rc1/css/foundation-float.css" rel="stylesheet">
+
+<!-- Compressed JavaScript -->
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="app">
+        <section class='row'>
+            <div class="small-6 columns">
+                <h1 class="text-center">YO</h1>
+                <div class="healthBar">
+                    <div class="healthBar text-center" style="background-color: green;margin: 0; color: #fff"
+                    :style='{width: playerHealth +"%"}'>{{playerHealth}}</div>
+                </div>
+            </div>
+            <div class="small-6 columns">
+                <h1 class="text-center">MOUSTER</h1>
+                <div class="healthBar">
+                    <div class="healthBar text-center" style="background-color: green;margin: 0; color: #fff" :style='{width: monsterHealth+"%"}'>{{monsterHealth}}</div>
+                </div>
+            </div>
+        </section>
+        <section class="row controls" v-if="!gameIsRuning">
+            <div class="small-12 columns">
+                <button id="start-geme" @click='startGame'>START NEW GAME</button>
+            </div>
+        </section>
+        <section class="row controls" v-else>
+            <div class="small-12 columns">
+                <button id="attack" @click= 'attack'>ATTACK</button>
+                <button id="special-attack" @click='specialAttack'>SPECIAL-ATTACK</button>
+                <button id="heal"@click='heal'>HEAL</button>
+                <button id="give-up" @click='giveUp'>GIVE UP</button>
+            </div>
+        </section>
+        <section class="row log" v-show="logs.length">
+            <div class="small-12 columns">
+                <ul>
+                    <li v-for="log in logs" :class='{"player-log" : log.isPlayer,"monster-log" : !log.isPlayer}'>{{log.damage}}</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>

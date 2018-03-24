@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Document</title>
+</head>
+<body>
+        <div id="app" class="wrapper">
+            <ul class="items" >
+                <template v-for="num in 6">
+                    <li class="item" ref="item" @click.stop="change($event)" >
+                        <div class="inner " ref="inner">
+                            <div class="bd" ></div>
+                            <div class="title" ><h2>image{{num}}</h2></div>
+                            <div class="directives">
+                                <div class="headr">brid{{num}}</div>
+                                <!-- <div class="dird"></div> -->
+                                <div class="close" @click.stop="close"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                    
+                </template>
+        </div>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                action: false,
+            },
+            methods: {
+                change(e){
+                    console.log(e.currentTarget);
+                    e.currentTarget.className='item active'
+                    this.$el.className = 'wrapper wrapper-active'
+                },
+                close(){
+                    this.$refs.item.forEach(ele => {
+                        ele.className='item'
+                    })
+                    this.$el.className = "wrapper"
+                }
+            },
+            mounted () {
+                setTimeout(function(){
+                vm.$refs.inner.forEach(element => {
+                    element.className= 'inner active'
+                });
+
+                },1)
+            }
+        })
+    </script>
+</body>
+</html>

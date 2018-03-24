@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <dd-cmp></dd-cmp> -->
+        <!-- <zp-cmp2></zp-cmp2>  局部的未注册不能使用       -->
+        <!-- <table> -->
+            <!-- <tr></tr> -->
+            <dd-cmp v-show="show" title = 'hello'></dd-cmp>
+            <button @click ="show = !show">show</button>
+            <dd-cmp title = 'zzp'></dd-cmp>
+        <!-- </table> -->
+    </div>
+    <!-- <div id="app2">
+            <zp-cmp2></zp-cmp2> 
+            <dd-cmp></dd-cmp>
+    </div> -->
+    <script>
+        Vue.component('dd-cmp',{
+            template: `<div>
+                    <div @click='t = "hellp word"'>{{t}}</div>
+                </div>`,
+            data() {
+                return {
+                    t: this.title
+                }
+            },
+            props: ["title"]
+        })
+        new Vue({
+            el: '#app',
+            // template: `<div><table><tr><dd-cmp></dd-cmp></tr></table></div>`,
+            data: {
+                show: true
+            }
+            
+        })
+        // new Vue({
+        //     el: '#app2',
+        //     // components: {
+        //     //     'zp-cmp2': {
+        //     //         template:`<div>
+        //     //             <div>hello word</div>
+        //     //         </div>`
+        //     //     }
+        //     // }
+        // })
+    </script>
+</body>
+</html>

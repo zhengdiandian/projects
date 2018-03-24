@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        /* html,body{
+            width: 100%;
+                
+        } */
+
+        .wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .wrapper .turn-table {
+            width: 100px;
+            height: 100px;
+            border: 80px solid orange;
+            border-radius: 50%;
+            background-image: url('./2.png');
+            background-size: cover;
+            animation: turn 10s linear paused;
+        }
+
+        .turn-neeble {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            margin-left: -5px;
+            width: 10px;
+            height: 150px;
+            transform: rotate(-60deg);
+            transform-origin: top;
+            border-radius: 10px 10px 100% 100%;
+            background-color: #004455;
+            -webkit-transition: all 600ms linear;
+            -moz-transition: all 600ms linear;
+            transition: all 600ms linear;
+        }
+
+        @keyframes turn {
+            from {
+                transform: rotate(0deg)
+            }
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .active {
+            transform: rotate(-30deg)
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="turn-table"></div>
+        <div class="turn-neeble"></div>
+    </div>
+    <div class="btn">
+        <button>点我</button>
+    </div>
+    <script>
+        var oBtn = document.getElementsByTagName('button')[0],
+            oNeeble = document.getElementsByClassName('turn-neeble')[0],
+            oTable = document.getElementsByClassName('turn-table')[0],
+            flag = true
+
+        oBtn.addEventListener('click', function () {
+            if(flag){
+                flag = !flag
+                oNeeble.className = 'turn-neeble active'
+                oTable.style.animationPlayState = 'running'
+            }else{
+                flag = !flag
+                oNeeble.className = 'turn-neeble'
+                oTable.style.animationPlayState = 'paused'
+            }
+        })
+    </script>
+</body>
+
+</html>

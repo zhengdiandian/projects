@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百炼成钢</title>
+    <style>
+        #box {
+            width: 200px;
+            height:300px;
+            border: 1px solid black;
+        }
+    </style>
+    <script type="text/javascript">
+        function change(val) {
+            var img_obj=document.getElementById("img_id");
+            var div_obj=document.getElementById("box");
+            if(val=="big")
+            {
+                div_obj.style.width="300px"
+                div_obj.style.backgroundColor="black"
+            }
+            else if(val =="small")
+            {
+                div_obj.style.width="100px"
+                div_obj.style.backgroundColor="red"
+
+            }
+        else if (val=="img_big")
+            {
+
+                img_obj.style.width="200px";
+            }
+            else if (val=="img_small")
+            {
+                img_obj.style.width="50px"
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="变大" onclick="change('big')">
+<input type="button" value="变小" onclick="change('small')">
+<input type="button" value="图片变大" onclick="change('img_big')">
+<input type="button" value="图片变小" onclick="change('img_small')">
+<div id="box"></div>
+<img src="img/con-phone3.jpg" width="100px" alt="" id="img_id">
+</body>
+</html>

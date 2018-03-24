@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        canvas{
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 200px 200px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="300" height="300" id="canvas1"></canvas>
+    <script>
+        var canvas1 = document.getElementById('canvas1');
+        var ctx = canvas1.getContext('2d'),
+            h = canvas1.height,
+            w = canvas1.width,
+            lastPointX,
+            lastPointY,
+            nowPointX,
+            nowPointY
+        function init () {
+            var r = Math.random()
+            ctx.fillStyle = "#ccc"
+            ctx.fillRect(0, 0, w, h)
+            if (r >0.5) {
+                canvas1.style.backgroundImage = 'url(./index.jpg)'
+            } else {
+                canvas1.style.backgroundImage = 'url(./1.jpg)'
+            }
+            ctx.globalCompositeOperation = 'destination-out'
+            canvas1.addEventListener('mousedown',downFun,false)
+        }
+        function downFun (e) {
+            lastPointX  = e.clientX - canvas1.offsetLeft
+            lastPointY = e.clientY - canvas1.offsetTop
+            canvas1.addEventListener('mousemove', moveFun, false)
+            document.addEventListener('mouseup', upFun, false)
+        }
+        init()
+        function moveFun (e) {
+            nowPointX = e.clientX - canvas1.offsetLeft
+            nowPointY = e.clientY - canvas1.offsetTop
+            ctx.beginPath()
+            ctx.lineWidth = 20
+            ctx.lineCap = 'round'
+            ctx.moveTo(lastPointX, lastPointY)
+            ctx.lineTo(nowPointX,nowPointY)
+            ctx.stroke()
+            
+            ctx.beginPath()
+            // console.log(nowPointY,nowPointX);
+            ctx.arc(nowPointX, nowPointY, 10, 0, Math.PI * 2)
+            ctx.closePath()
+            ctx.fill()
+            lastPointX = nowPointX
+            lastPointY = nowPointY
+        } 
+        function upFun () {
+            canvas1.removeEventListener('mousemove', moveFun, false)
+            document.removeEventListener('mouseup', upFun, false)
+            clearAll()
+        }
+        function clearAll () {
+            var d = ctx.getImageData(0, 0, w, h),
+                len = d.data.length /4
+                c = 0
+            console.log(d);
+            for ( var i = 0; i < len; i++){
+                if(d.data[i] === 0) {
+                    c++
+                }
+            }
+            console.log(c);
+            if(c > len * 0.7){
+                ctx.clearRect(0, 0, w, h)
+                
+            }
+        }
+        
+    </script>
+</body>
+</html>

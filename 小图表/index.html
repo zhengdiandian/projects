@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        /* input[type='radio'] {
+            float: left;
+        } */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 1px  solid #ccc;
+            text-align: center;
+        }
+        .item{
+            float: left;
+            
+        }
+        .first{
+            margin-left: 115px;
+            
+        }
+        input{
+            width: 20px;
+            height: 20px;
+            margin-right: 30px;
+        }
+        .item > div{
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 0px;
+            width: 400px;
+            height: 380px;
+            line-height: 380px;
+        }
+        .container .item:nth-of-type(1) div{
+            background-color: red;
+        }
+        .container .item:nth-of-type(2) div{
+            background-color:green;
+        }
+        .container .item:nth-of-type(3) div{
+            background-color: blue;
+        }
+        .container .item input:checked+div{
+            display: block;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class='item'>
+            <input class='first' type="radio" name="one" id="" checked="checked">
+            <div>1</div>
+        </div>
+        <div class='item'>
+            <input type="radio" name="one" id="">
+            <div>2</div>
+        </div>
+        <div class='item'>
+            <input type="radio" name="one" id="">
+            <div>3</div>
+        </div>
+    </div>
+</body>
+
+</html>

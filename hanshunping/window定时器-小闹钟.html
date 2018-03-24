@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小闹钟</title>
+    <script>
+        var nzid=document.getElementById("nz");
+        var time_new = new date();
+            time_new = time_new.toLocaleString();
+        nzid.innerHTML=time_new;
+
+    </script>
+</head>
+<body>
+<span id="nz"></span>
+<br>
+<input type="button" value="开始计时" onclick="kaishi()">
+<input type="button" value="结束计时" onclick="jieshu()">
+<script>
+    var nzid=document.getElementById("nz");
+    var  time_new = 0;
+//    var count = 0;
+    var  sx = window.setInterval("time()",1000);
+    function time()
+    {    time_new = new Date();
+        time_new = time_new.toLocaleString();
+        nzid.innerHTML=time_new;
+//        count++;
+//        if (count == 10)
+//        {
+//            window.clearInterval(sx)
+//        }
+    }
+    function kaishi()
+    {
+//        time();
+         sx = window.setInterval(time,1000);
+    }
+    function jieshu() {
+        window.clearInterval(sx)
+    }
+</script>
+</body>
+</html>

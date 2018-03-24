@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>loginok</title>
+
+</head>
+<body>
+<h1>登入成功</h1>
+<span id="timer">5</span>秒后跳转到新页面
+<script>
+    var timer_new=new Date;
+    //用来不停的修改span的值
+    function conuttimer() {
+        var timer=document.getElementById("timer");
+        var daoshu=timer.innerHTML;
+        daoshu-=1;
+        timer.innerHTML=daoshu;
+        if (daoshu==0)
+        {
+            open("object.html","_slof");
+            clearTimeout(t)
+        }
+
+    }
+    var t=setInterval("conuttimer()",1000)
+</script>
+</body>
+</html>

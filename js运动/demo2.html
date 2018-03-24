@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var oDiv = document.getElementsByClassName('box')[0];
+        oDiv.onmouseup = function () { 
+            startMove(this,0,8)
+         }
+        //  拖拽
+        oDiv.onmousedown = function (e) {
+            var e = e ||window.event,
+                disX = e.clientX -this.offsetLeft,
+                disy = e.clientY -this.offsetTop,
+                _this =this
+                // console.log(e);
+            document.onmousemove = function (e) {
+                var newLeft = e.clientX -disX,
+                    newTop = e.clientY - disy
+                _this.style.left = newLeft + 'px'
+                _this.style.top = newTop + 'px'
+            }
+            document.onmouseup =function (){
+                document.onmousemove = null
+                document.onmouseup = null
+            }
+        }
+        //模拟重力
+        function startMove(obj,iSpeedX,iSpeedY) { 
+            clearInterval(obj.timer)
+            var g = 3
+            obj.timer = setInterval(function () { 
+                iSpeedY += g
+                var newleft = obj.offsetLeft + iSpeedX,
+                    newtop = obj.offsetTop + iSpeedY
+                if(newleft >= document.documentElement.clientWidth - obj.offsetWidth){
+                    iSpeedX *= -1
+                    iSpeedY *= 0.8
+                    iSpeedX *= 0.8
+                    newleft = document.documentElement.clientWidth - obj.offsetWidth
+                }
+                if(newleft <= 0){
+                    iSpeedY *= -1
+                    iSpeedY *= 0.8
+                    iSpeedX *= 0.8
+                    newleft = 0
+                }
+                if(newtop >= document.documentElement.clientHeight - obj.offsetHeight){
+                    iSpeedY *= -1
+                    iSpeedY *= 0.8
+                    iSpeedX *= 0.8
+                    newtop = document.documentElement.clientHeight - obj.offsetHeight
+                }
+                if(newtop <= 0){
+                    iSpeedY *= -1
+                    iSpeedY *= 0.8
+                    iSpeedX *= 0.8
+                    newtop = 0
+                }
+                obj.style.left = newleft + 'px'
+                obj.style.top = newtop + 'px'
+            },30)
+         }
+    </script>
+</body>
+</html>

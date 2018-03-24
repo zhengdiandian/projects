@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0px;
+}
+.tou{
+    background-color: cadetblue;
+    width: 80%;
+    height: 820px;
+    margin: 0px auto;
+}
+.biaoti{width: 100%;
+    background-color: darkcyan;
+    height: 100px;
+    position: relative;
+
+}

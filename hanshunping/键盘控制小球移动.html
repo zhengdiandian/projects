@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <title>键盘控制小球移动</title>
+    <style>
+        #my_canvas{
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body onkeydown="moveBall(event)">
+<canvas id="my_canvas" height="400px" width="500px"></canvas>
+<script>
+    var huabu=document.getElementById("my_canvas");
+    var huabi=huabu.getContext("2d");
+    var ball_x=20;
+    var ball_y=100;
+    var ball_r=20;
+    var ball_sd=1;
+
+    function  (ball_x,ball_y)
+    {
+        huabi.beginPath();
+        huabi.fillStyle="red";
+        huabi.arc(ball_x,ball_y,ball_r,0,2*Math.PI) ;
+        huabi.fill();
+
+    }
+    newBall(ball_x,ball_y);
+    function moveBall(event)
+    {
+//        alert(event.keyCode);
+        var event=arguments.callee.caller.arguments[0]||window.event;
+        switch (event.keyCode)
+        {
+            case 83:
+                if (ball_y>=huabu.height-ball_r)
+                {
+
+                }else
+                {
+                    ball_y++;
+
+                }
+                break;
+            case 87:
+                if (ball_y<=ball_r)
+                {
+
+                }else
+                {
+                    ball_y--;
+
+                }
+                break;
+            case 68:
+                if (ball_x>=huabu.width-ball_r)
+                {
+
+                }else
+                {
+                    ball_x++;
+
+                }
+                break;
+            case 68:
+                if (ball_x>=huabu.width-ball_r)
+                {
+
+                }else
+                {
+                    ball_x++;
+
+                }
+                break;
+            case 65:
+                if (ball_x<=ball_r)
+                {
+
+                }else
+                {
+                    ball_x--;
+
+                }
+                break;
+
+        }
+//        huabi.clearRect(0,0,500,400);
+//        alert(event.keyCode);
+        // 保存当前渲染上下文所进行的变换
+//        huabi.save();
+//
+//// 重置渲染上下文并清空画布
+//        huabi.setTransform(1, 0, 0, 1, 0, 0);
+//        huabi.clearRect(0, 0, huabu.width, huabu.height);
+//
+//// 恢复先前渲染上下文所进行的变换
+//        huabi.restore();
+        huabi.clearRect(0,0,500,40000);
+        newBall(ball_x,ball_y);
+
+    }
+</script>
+</body>
+</html>

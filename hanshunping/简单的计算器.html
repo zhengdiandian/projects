@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单的计算器</title>
+</head>
+<body>
+第一个数:<input id="num1" type="text"><br>
+<select id="fuhao">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select><br>
+第二个数:<input id="num2" type="text"><br>
+<input type="button" value=" = " onclick="res()"><br>
+运算结果:<input id="num" type="text">
+<script>
+    function res()
+    {
+
+        var num1_obj = document.getElementById("num1");
+        var num1_vle = num1_obj.value;
+        num1_vle = parseFloat(num1_vle);
+        var num2_obj = document.getElementById("num2");
+        var num2_vle = num2_obj.value;
+        num2_vle = parseFloat(num2_vle);
+        var fuhao_obj = document.getElementById("fuhao");
+        var fuhao_vle = fuhao_obj.value;
+        var res = 0;
+        switch (fuhao_vle)
+        {
+            case "+":
+                res = num1_vle + num2_vle;
+                break;
+                num1_vle;num1_vle
+            case "-":
+                res = num1_vle - num2_vle;
+                break;
+            case "*":
+                res = num1_vle * num2_vle;
+                break;
+            case "/":
+                res = num1_vle / num2_vle;
+                break;
+        }
+        alert(res);
+        var num_obj = document.getElementById("num");
+        num_obj.value=res.toFixed(2);
+
+
+    }
+</script>
+
+</body>
+</html>

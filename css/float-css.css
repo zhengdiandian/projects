@@ -1,0 +1,31 @@
+.div1{
+    width: 100px;
+    height: 100px;
+    background-color: #009399;
+    float: left;
+}
+.div2{
+    width: 100px;
+    height: 100px;
+    background-color: #003c52;
+    float: left;
+
+}
+.text{
+    /*clear: both;*/
+    float: none;
+}
+.div3{
+    width: 100px;
+    height: 100px;
+    background-color: #847349;
+    float: right;
+}
+.container{
+    width: 280px;
+    height: 600px;
+    background-color: #666666;
+}
+.text{
+    clear: both;
+}

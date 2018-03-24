@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .wrapper{
+            position: absolute;
+            /* margin: 0 auto; */
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform:  translate(-50%,-50%);
+            /* perspective: 1000px; */
+            /* perspective-origin: 75% ; */
+            animation: turn 5s linear infinite alternate;
+        }
+        @keyframes turn{
+            to{
+                transform:  translate(-50%,-50%) rotateX(0deg) rotateY(0deg);
+            }
+            from{
+                transform:  translate(-50%,-50%) rotateX(360deg) rotateY(360deg);
+            }
+        }
+        .wrapper .item{
+            position: absolute;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            opacity: 0.5;
+            text-align: center;
+            line-height: 200px;
+
+        }
+        .wrapper .item:nth-of-type(1){
+            background-color: red;
+            transform: translateZ(100px);
+        }
+        .wrapper .item:nth-of-type(2){
+            background-color: green;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .wrapper .item:nth-of-type(3){
+            background-color: yellowgreen;
+            transform: rotateX(90deg) translateZ(-100px);
+            
+        }
+        .wrapper .item:nth-of-type(4){
+            /* transform: rotateY(270deg) translateZ(-100px) translateX(-100px); */
+            background-color: pink;
+            transform: rotateY(90deg) translateZ(100px);
+            
+        }
+        .wrapper .item:nth-of-type(5){
+            background-color: blueviolet;
+            transform: rotateY(90deg) translateZ(-100px);
+            
+        }
+        .wrapper .item:nth-of-type(6){
+            background-color: aqua;
+            transform: translateZ(-100px);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+</body>
+</html>

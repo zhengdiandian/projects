@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        .demo{
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background-color: gray;
+            margin-left: 10px;
+        }
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="demo" @click = "attach = !attach" :class = "divClass"></div>
+        <div class="demo"></div>
+        <div class="demo" :class='[color,{blue: !attach}]'></div>
+        <input type="text" v-model='color'>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                attach: false,
+                color: 'green'
+            },
+            computed: {
+                divClass: function () {
+                    return {
+                        red: this.attach,
+                        blue: !this.attach,
+                    }
+                }
+            }
+        })
+        agu
+    </script>
+</body>
+</html>

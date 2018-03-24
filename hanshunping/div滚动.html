@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div滚动</title>
+    <style>
+        #div{
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+        }
+        #div1{
+            height: 300px;
+            /*background: pink;*/
+            /*overflow: scroll;*/
+        }
+        #div2{
+            /*display: none;*/
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<div id="div">
+    <div id="div1">
+    <ul id="dome">
+        <li>1111111111111</li>
+        <li>1111111111111</li>
+        <li>1111111111111</li>
+        <li>1111111111111</li>
+        <li>1111111111111</li>
+        <li>1111111111111</li>
+        <li>1111111111111</li>
+        <li>1111111111111</li>
+        <li>1111111111111</li>
+        <li>1111111111111</li>
+        <li>1111111111111</li>
+        <li>1111111111111</li>
+        <li>1111111111111</li>
+        <li>1111111111111</li>
+        <li>1111111111111</li>
+    </ul>
+    </div>
+    <div id="div2"></div>
+</div>
+    <script>
+        var t1=document.getElementById("div1");
+        var t=$("div"),t2=$("div2");
+        alert(t2.offsetTop);
+        alert(t.scrollTop);
+        t2.innerHTML=t1.innerHTML;
+        //        document.getElementById("div").onmouseover=clearInterval(time);
+        function scroll1()
+        {
+//            document.write(dome1.clientHeight)
+
+            if (t2.offsetTop<=t.scrollTop)
+            {
+//                alert(t2.offsetTop);
+//                alert(t.scrollTop);
+                t.scrollTop-=t1.offsetHeight;
+//                alert(t2.offsetTop);alert(t1.offsetTop);
+//                alert(t.scrollTop);
+            }else
+            {
+                t.scrollTop+=3;
+//                alert(t2.offsetTop);
+//                alert(t1.offsetHeight);
+//
+//                alert(t.scrollHeight);
+            }
+        }
+        //        t.onmouseout=time=setInterval("scroll()",100);
+        var time=window.setInterval(scroll1,100);
+        t.onmouseover=function ()
+        {
+            clearInterval(time)
+        }
+        t.onmouseout=function ()
+        {
+            time=setInterval(scroll1,100)
+        }
+        function $(id)
+        {
+          return document.getElementById(id)
+
+        }
+    </script>
+</body>
+</html>

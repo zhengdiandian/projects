@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>23-选择器的练习</title>
+    <style>
+        <!---->
+        /*p{*/
+            /*color: red;*/
+        /*}*/
+        /*#identity1{*/
+            /*color: red;*/
+        /*}*/
+        /*#identity2{*/
+            /*color: #f00;*/
+        /*}*/
+        /*.para{*/
+            /*color: #f00;*/
+        /*}*/
+        /*后代选择器
+        div p{
+            color: red;
+        }*/
+        /*子元素选择器
+        div>p{
+            color: red;
+        }*/
+        /*交集选择器
+
+
+        div .para{
+            color: red;
+        }*/
+        /*并集选择器
+
+
+        #identity1,#identity2{
+            color: green;
+        }*/
+        /*通用兄弟选择器
+
+
+        h1~p{
+            color: red;
+        }*/
+        /*序选择器
+        p:nth-child(n+1){
+            color: red;
+        }*/
+        /*
+
+
+        p:nth-of-type(n+1){
+            color: green;
+        }*/
+        /*属性选择器
+
+         */
+        p[id]{
+            color: blue;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>我是标题</h1>
+    <p id="identity1" class="para">我是段落</p>
+    <p id="identity2" class="para">我是段落</p>
+</div>
+</body>
+</html>

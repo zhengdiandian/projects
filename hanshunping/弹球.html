@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹球</title>
+    <style>
+        #my_canvas{
+            /*border: 1px solid;*/
+            border: 1px solid;           
+        }
+    </style>
+</head >
+<body>
+<canvas id="my_canvas" height="400px" width="500px"></canvas>
+<script>
+    var huabu=document.getElementById("my_canvas");
+    var huabi=huabu.getContext("2d");
+    var ball_x=20;
+    var ball_y=100;
+    var ball_r=20;
+    var ball_sd=1;
+    //创建小球
+    function newBall(ball_x,ball_y)
+    {
+        huabi.beginPath();
+        huabi.fillStyle="red";
+        huabi.arc(ball_x,ball_y,ball_r,0,2*Math.PI) ;
+        huabi.fill();
+
+    }
+    newBall(ball_x,ball_y);
+    var ball_move_x=true;
+    var ball_move_y=true;
+    function moveball() {
+        if(ball_x>=huabu.width-ball_r)
+        {
+            ball_move_x=false;
+        }else if(ball_x<=ball_r)
+        {
+            ball_move_x=true
+        }
+
+        if (ball_move_x)
+        {
+            ball_x+=ball_sd;
+        }else
+        {
+            ball_x-=ball_sd;
+
+        }
+        if(ball_y>=huabu.height-ball_r)
+        {
+            ball_move_y=false;
+        }else if(ball_y<=ball_r)
+        {
+            ball_move_y=true
+        }
+        if (ball_move_y)
+        {
+            ball_y+=ball_sd;
+        }else
+        {
+            ball_y-=ball_sd;
+
+        }
+//        ball_x+=ball_sd;
+//        ball_y+=ball_sd;
+        huabi.clearRect(0,0,500,400);
+        newBall(ball_x,ball_y);
+
+
+    }
+
+    setInterval(moveball,5)
+</script>
+</body>
+</html>

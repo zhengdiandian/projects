@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{title}}</p>
+        <button @click = 'title = "update"'>change</button>
+        <button @click = 'destroy'>destroye</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                title: 'the vue instance'
+            },
+            methods:{
+                destroy(){
+                    this.$destroy()
+                }
+            },
+            beforeCreate:function(
+            ){
+
+                console.log('beforeCreate');
+            },
+            created () {
+                console.log('created');
+            },
+            beforeMount(){
+                console.log('beforeCreate');
+            },
+            mounted(){
+                console.log('Mounted');
+            },
+            beforeUpdate () {
+                console.log('beforeUpdate');
+            },
+            updated () {
+                console.log('updated');
+            },
+            beforeDestroy () {
+                console.log('beforeDestroy');
+            },
+            destroyed () {
+                console.log('destroyed');
+            }
+        })
+    </script>
+</body>
+</html>

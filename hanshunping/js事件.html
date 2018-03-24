@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function vote(obj)
+        {
+            alert(obj.value)
+            for(var key in obj)
+            {
+                document.write(key + "&nbsp;&nbsp;&nbsp;" +obj[key]+"<br>")
+            }
+        }
+    </script>
+</head>
+<body>
+<select name="" id="sg_id" onchange=" vote(this)">
+    <option value="xg">西瓜</option>
+    <option value="tz">桃子</option>
+    <option value="xj">香蕉</option>
+</select>
+</body>
+</html>

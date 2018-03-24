@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .wrapper{
+            width: 450px;
+            height: 600px;
+            border: 2px solid #71c3fc;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            
+        }
+        ul li {
+            display: inline-block
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+            outline: none;
+            margin-left: 35px;
+        }
+        #dis{
+            display: block;
+        }
+        .content1 {
+            display: none;
+            position: absolute;
+            /* top: 10%; */
+            left: 0;
+            margin:30px 10px 10px 10px;
+            text-indent: 2em;
+            text-overflow: hidden;
+            /* overflow: hidden; */
+            float: left;
+        }
+        .btn-checked{
+            border: 5px solid #ffafcc;
+            box-shadow: 3px 3px 3px rgba(5, 0, 0, 0.3);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <ul>
+            <li>
+                <button class="btn-checked">button1</button>
+                <div class="content1 dis" id="dis">aaaaaaa</div>
+                
+            </li>
+            <li>
+                    <button class="btn2">button2</button>
+                    <div class="content1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, consequuntur ipsam. Sint bbbbbbbbbi?</div>
+                    
+            </li>
+            <li>
+                    <button>button3</button>
+                    <div class="content1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, consequuntur ipsam. Sint cccccccccccc</div>
+                    
+            </li>
+        </ul>
+    <script src="./jquery-3.2.1.min.js"></script>
+    <script>
+        $('button').click(function(){
+            $('button').removeClass('btn-checked')
+            $('.content1').css('display','none')
+            $(this).addClass('btn-checked').next().css('display','block')
+        })
+    </script>
+</body>
+</html>

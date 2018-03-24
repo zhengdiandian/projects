@@ -1,0 +1,57 @@
+
+<input type="text" name="" class="import" id="a">
+<input type="text" name="" class="import" id="b">
+<input type="text" name="" class="import" id="c">
+<hr>
+<input type="text" name="" id="d">
+<script>
+    let imp = document.getElementsByClassName('import'),
+        exp = document.getElementById('d'),
+        obj = {
+        
+        }
+    imp = [].slice.call(imp)
+    imp.forEach(function(el){
+        // el.oninput = change
+    })
+    exp.oninput = function(self){
+        obj.value = self.value  
+    }
+
+    function change(){
+        obj.value 
+        
+    }
+    
+    Object.defineProperty(obj,'value',{
+        get:function () {
+            
+            return  d.value = this.value
+            
+        },
+        set: function(val) {
+            val = val || ""
+            value = a.value + b.value + c.value,
+            len = value.length
+            if(val=== )
+        }
+    })
+    
+    // d.onfocus = function(){
+    //     var oldVal = a.value + b.value + c.value
+    //     this.value = oldVal
+    //     d.oninput=function(event){
+    //         event.preventDefault();
+            
+    //         let len =  oldVal.length
+
+    //         console.log(len);
+    //         this.value.length <len||this.value.indexOf(oldVal) != 0 ? this.value = oldVal :
+    //         this.value = oldVal +  this.value.slice(len)
+    //         console.log(this.value.indexOf(oldVal));
+            
+            
+    //     }
+    // }
+    
+</script>
